@@ -1,40 +1,43 @@
 #!/bin/bash
+
 set -e
-cd cloudTest
+
+# 반드시 환경변수 필요    , ${변수:?에러메시지}
+: "${ROOT_DIR:?ROOT_DIR is not set}"
+
+echo "ROOT_DIR = $ROOT_DIR"
 
 echo "=============================="
 echo "Frontend Deploy"
 echo "=============================="
 
-cd frontend
+cd "$ROOT_DIR/frontend"
 
-# nginx html 폴더로 복사
 sudo cp -r dist/* /var/www/html/
-cd ..
 
 echo "=============================="
 echo "Backend Deploy"
 echo "=============================="
-cd backend
 
-# deploy 폴더 생성
-mkdir -p ../../deploy
+cd "$ROOT_DIR/backend"
+
+# 상위(workspaces)에 deploy 생성
+mkdir -p "$ROOT_DIR/../deploy"
 
 # jar 복사
-cp build/libs/*.jar ../../deploy/
+cp build/libs/*.jar "$ROOT_DIR/../deploy/"
 
-cd ../../deploy
+cd "$ROOT_DIR/../deploy"
 
 echo "=============================="
 echo "Backend Run"
 echo "=============================="
 
-# 기존 실행중인 java 종료 (선택)
 pkill -f "SNAPSHOT.jar" || true
 
-# 백그라운드 실행
 rm -f *-plain.jar
-nohup java -jar *.jar > app.log 2>&1 &
+
+nohup java -jar *.jar >> app.log 2>&1 &
 
 echo "=============================="
 echo "DEPLOY SUCCESS"

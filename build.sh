@@ -2,29 +2,31 @@
 
 set -e
 
-cd cloudTest
+# ROOT_DIR 환경변수 사용
+if [ -z "$ROOT_DIR" ]; then
+    echo "ERROR: ROOT_DIR environment variable is not set."
+    exit 1
+fi
+
+echo "ROOT_DIR = $ROOT_DIR"
+
 echo "=============================="
 echo "Frontend Build Start"
 echo "=============================="
 
-
-cd frontend
+cd "$ROOT_DIR/frontend"
 
 npm install
 npm run build
-
-cd ..
 
 echo "=============================="
 echo "Backend Build Start"
 echo "=============================="
 
-cd backend
+cd "$ROOT_DIR/backend"
 
 chmod +x gradlew
 ./gradlew build
-
-cd ..
 
 echo "=============================="
 echo "ALL BUILD SUCCESS"
