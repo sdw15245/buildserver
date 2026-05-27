@@ -37,7 +37,7 @@ pkill -f "SNAPSHOT.jar" || true
 
 rm -f *-plain.jar
 
-nohup java -jar *.jar >> app.log 2>&1 &
+nohup java -jar *.jar --spring.profiles.active=prod >> app.log 2>&1 &
 
 echo "=============================="
 echo "DEPLOY SUCCESS"
