@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-cd cloud2
+cd cloudTest
 
 echo "=============================="
 echo "Frontend Deploy"

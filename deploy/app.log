@@ -1,0 +1,18 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.6)
+
+2026-05-27T04:34:40.735Z  INFO 69324 --- [backend] [           main] com.example.backend.BackendApplication   : Starting BackendApplication v0.0.1-SNAPSHOT using Java 21 with PID 69324 (/workspaces/buildserver/deploy/backend-0.0.1-SNAPSHOT.jar started by codespace in /workspaces/buildserver/deploy)
+2026-05-27T04:34:40.750Z  INFO 69324 --- [backend] [           main] com.example.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-05-27T04:34:42.696Z  INFO 69324 --- [backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-05-27T04:34:42.719Z  INFO 69324 --- [backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-27T04:34:42.719Z  INFO 69324 --- [backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-27T04:34:42.755Z  INFO 69324 --- [backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1642 ms
+2026-05-27T04:34:43.345Z  INFO 69324 --- [backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-05-27T04:34:43.366Z  INFO 69324 --- [backend] [           main] com.example.backend.BackendApplication   : Started BackendApplication in 3.787 seconds (process running for 5.403)
